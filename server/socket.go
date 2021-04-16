@@ -20,7 +20,7 @@ func WS_Thread(ws *websocket.Conn) {
 			Normalchan <- WsMsgItem{CONN_TYPE_CLOSE, ws, nil}
 			return
 		}
-		//vlog.Debug("接收一般消息", msg)
+		tlog.Debug("接收一般消息", msg)
 		skt := GetSocketItem(ws)
 		if skt == nil {
 			WS_SendError(define.ERROR_TYPE_AUTH, "未保存的连接", ws)

@@ -7,7 +7,9 @@ import (
 )
 
 func main() {
-	tlog.Info("11")
+	tlog.Info("start")
 	go server.StartServer()
 	go client.StartClient()
+
+	select {}
 }
